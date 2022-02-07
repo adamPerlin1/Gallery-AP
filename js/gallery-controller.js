@@ -44,4 +44,10 @@ function setModal(ev) {
   $elModal.find('.description').text(evData.desc);
   $elModal.find('.date').text(evData.publishedAt);
   $elModal.find('.category').text(evData.labels.join(', '));
+  $elModal.find('.open-proj').click(evData.url, onOpenProj)
+}
+
+function onOpenProj(url){
+  window.open(url.data);
+  $('.open-proj').off();
 }
